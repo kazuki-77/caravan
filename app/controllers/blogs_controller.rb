@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
+
   def index
+    @blogs = Blog.all
   end
 
   def show
@@ -22,7 +24,7 @@ class BlogsController < ApplicationController
 
   private #ストロングパラメーターを使うとフォームからデータを受け取れる
   def blog_params
-  params.require(:blog).permit(:title,:cotegory,:body)
+  params.require(:blog).permit(:title,:category,:body)
   end
 
 end
